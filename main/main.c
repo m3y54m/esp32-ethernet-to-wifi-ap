@@ -1,21 +1,3 @@
-#define CONFIG_ETH_MDC_GPIO 23
-#define CONFIG_ETH_MDIO_GPIO 18
-#define CONFIG_ETH_PHY_ENABLE_GPIO 5
-#define CONFIG_ETH_PHY_ADDR 1
-#define CONFIG_WIFI_SSID "ESP32-WIFI-AP-NAME"
-#define CONFIG_WIFI_PASSWORD "ESP32-WIFI-AP-PASS"
-#define CONFIG_WIFI_CHANNEL 1
-#define CONFIG_MAX_STA_CONN 4
-#define CONFIG_IS_SSID_HIDDEN 0
-
-/* eth2ap (Ethernet to Wi-Fi AP packet forwarding) Example
-
-   This example code is in the Public Domain (or CC0 licensed, at your option.)
-
-   Unless required by applicable law or agreed to in writing, this
-   software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-   CONDITIONS OF ANY KIND, either express or implied.
-*/
 #include <string.h>
 #include <stdlib.h>
 #include "sdkconfig.h"
@@ -30,7 +12,17 @@
 #include "esp_private/wifi.h"
 #include "driver/gpio.h"
 
-static const char *TAG = "eth_example";
+#define CONFIG_WIFI_SSID "ESP32-WIFI-AP-NAME"
+#define CONFIG_WIFI_PASSWORD "ESP32-WIFI-AP-PASS"
+#define CONFIG_IS_SSID_HIDDEN 0
+#define CONFIG_ETH_MDC_GPIO 23
+#define CONFIG_ETH_MDIO_GPIO 18
+#define CONFIG_ETH_PHY_ENABLE_GPIO 5
+#define CONFIG_ETH_PHY_ADDR 1
+#define CONFIG_WIFI_CHANNEL 1
+#define CONFIG_MAX_STA_CONN 4
+
+static const char *TAG = "eth2ap";
 static esp_eth_handle_t s_eth_handle = NULL;
 static QueueHandle_t flow_control_queue = NULL;
 static bool s_sta_is_connected = false;

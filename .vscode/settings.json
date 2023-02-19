@@ -8,6 +8,8 @@
     "target/esp32.cfg"
   ],
   "files.associations": {
-    "freertos.h": "c"
+    "freertos.h": "c",
+    "esp_eth_driver.h": "c",
+    "esp_event.h": "c"
   }
 }
