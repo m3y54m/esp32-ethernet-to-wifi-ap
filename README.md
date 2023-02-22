@@ -35,7 +35,7 @@ One solution is to use an additional GPIO as a "power pin", which either powers 
 
 See the example source code to see how the "power pin" GPIO can be managed in software.
 
-The example defaults to using GPIO 5 for this function, but it can be overriden. On Espressif's Ethernet development board, GPIO 17 is the power pin used to enable/disable the PHY oscillator.
+The example defaults to using GPIO 5 for this function, but it can be overriden. On [Espressif's Ethernet development board](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/hw-reference/esp32/get-started-ethernet-kit.html), GPIO 17 is the power pin used to enable/disable the PHY oscillator.
 
 | GPIO   | Enable PHY Oscillator  | Note                           |
 | ------ | ---------------------- | ------------------------------ |
