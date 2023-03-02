@@ -29,7 +29,7 @@
 
 Because GPIO0 is a strapping pin for entering UART flashing mode on reset, care must be taken when also using this pin as EMAC_TX_CLK. If the clock output from the PHY is oscillating during reset, the ESP32 may randomly enter UART flashing mode.
 
-One solution is to use an additional GPIO as a "power pin", which either powers the PHY on/off or enables/disables the PHY's own oscillator. This prevents the clock signal from being active during a system reset. For this configuration to work, GPIO0 also needs a pullup resistor and the "power pin" GPIO will need a pulldown resistor - as appropriate in order to keep the PHY clock disabled when the ESP32 is in reset.
+One solution is to use an additional GPIO as a "power pin", which either powers the PHY on/off or enables/disables the PHY's own oscillator. This prevents the clock signal from being active during a system reset. For this configuration to work, **GPIO0 also needs a pullup resistor** and the "power pin" GPIO will need a pulldown resistor - as appropriate in order to keep the PHY clock disabled when the ESP32 is in reset.
 
 ![image](https://user-images.githubusercontent.com/1549028/219957212-87524430-c882-499d-b07a-3611dd4a5865.png)
 
